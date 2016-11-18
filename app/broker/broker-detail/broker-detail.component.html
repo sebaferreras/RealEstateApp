@@ -1,0 +1,38 @@
+<ion-header no-shadow>
+	<ion-navbar dark>
+		<ion-title *ngIf="selectedBroker">{{ selectedBroker.Name }}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	
+	<ion-card *ngIf="selectedBroker">
+		
+		<ion-card-content dark>
+			<img [src]="selectedBroker.ImageUrl" />
+			<ion-card-title>{{ selectedBroker.Name }}</ion-card-title>
+			<p>
+				{{ selectedBroker.Position }}
+			</p>
+		</ion-card-content>
+
+		<ion-list>
+			<ion-item class="item">
+				<ion-icon name="call" item-left></ion-icon>
+      				Office Number
+				<ion-note item-right=""> {{ selectedBroker.OfficePhoneNumber }}</ion-note>
+			</ion-item>
+			<ion-item class="item">
+				<ion-icon name="phone-portrait" item-left></ion-icon>
+      				Mobile Number
+				<ion-note item-right=""> {{ selectedBroker.MobilePhoneNumber }}</ion-note>
+			</ion-item>
+			<ion-item class="item">
+				<ion-icon name="mail" item-left></ion-icon>
+      				Email
+				<ion-note item-right=""> {{ selectedBroker.Email }}</ion-note>
+			</ion-item>
+		</ion-list>
+
+	</ion-card>
+</ion-content>

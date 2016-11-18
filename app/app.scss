@@ -1,0 +1,10 @@
+ion-menu ion-content,
+ion-menu ion-content ion-list button.item {
+    color: map-get($map: $font, $key: light);
+    background-color: map-get($map: $background, $key: item);
+}
+
+ion-menu ion-content ion-list button.item.activated {
+    color: map-get($map: $font, $key: light);
+    background-color: map-get($map: $background, $key: item);
+}

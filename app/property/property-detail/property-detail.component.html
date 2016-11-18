@@ -1,0 +1,62 @@
+<ion-header no-shadow>
+	<ion-navbar dark>
+		<ion-title *ngIf="selectedProperty">{{ selectedProperty.Title }}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	
+	<ion-card *ngIf="selectedProperty">
+		<img [src]="selectedProperty.ImageUrl" />
+		<ion-card-content>
+			<ion-card-title>{{ selectedProperty.Title }}</ion-card-title>
+			<p>
+				{{ selectedProperty.Description }}
+			</p>
+		</ion-card-content>
+
+		<ion-list>
+			<ion-item class="item">
+				<ion-icon name="alarm" item-left></ion-icon>
+      				Bedrooms
+					  <ion-note item-right=""> {{ selectedProperty.Bedrooms }}</ion-note>
+			</ion-item>
+			<ion-item class="item">
+				<ion-icon name="water" item-left></ion-icon>
+      				Bathrooms
+					  <ion-note item-right=""> {{ selectedProperty.Bathrooms }}</ion-note>
+			</ion-item>
+		</ion-list>
+
+		<ion-row>
+			<ion-col>
+			<button dark clear small>
+				<ion-icon name="thumbs-up"></ion-icon>
+				<div>12 Likes</div>
+			</button>
+			</ion-col>
+			<ion-col>
+			<button dark clear small>
+				<ion-icon name="text"></ion-icon>
+				<div>4 Comments</div>
+			</button>
+			</ion-col>
+			<ion-col center text-center>
+			<ion-note>
+				11h ago
+			</ion-note>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+
+	<ion-card *ngIf="selectedProperty" (click)="openBrokerDetail()">
+		<ion-item detail-push primary>
+			<ion-avatar item-left>
+				<img [src]="selectedProperty.BrokerImageUrl">
+			</ion-avatar>
+			<h2>{{ selectedProperty.BrokerName }}</h2>
+			<p>{{  selectedProperty.BrokerPosition }}</p>
+		</ion-item>
+	</ion-card>
+
+</ion-content>

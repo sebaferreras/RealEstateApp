@@ -1,0 +1,22 @@
+<ion-header no-shadow>
+	<ion-navbar dark>
+		<ion-title>Brokers</ion-title>
+		<button menuToggle="left">
+			<ion-icon name="menu"></ion-icon>
+		</button>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	
+	<ion-list>
+		<ion-item tappable detail-push *ngFor="let broker of brokerList" (click)="openDetails(broker)">
+			<h2>{{ broker.Name }}</h2>
+			<p>{{ broker.Position }}</p>
+			<ion-thumbnail item-left>
+			<img [src]="broker.ImageUrl">
+			</ion-thumbnail>
+		</ion-item>
+	</ion-list>
+
+</ion-content>

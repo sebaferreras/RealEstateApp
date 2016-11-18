@@ -1,0 +1,22 @@
+<ion-header no-shadow>
+	<ion-navbar dark>
+		<ion-title>Properties</ion-title>
+		<button menuToggle="left">
+			<ion-icon name="menu"></ion-icon>
+		</button>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	
+	<ion-list>
+		<ion-item tappable detail-push *ngFor="let property of propertiesList" (click)="openDetails(property)">
+			<h2>{{ property.Title }}</h2>
+			<p detail>{{ property.Location }}</p>
+			<ion-thumbnail item-left>
+			<img [src]="property.PreviewImageUrl">
+			</ion-thumbnail>
+		</ion-item>
+	</ion-list>
+
+</ion-content>

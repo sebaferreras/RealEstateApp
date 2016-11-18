@@ -1,0 +1,41 @@
+@import "../app";
+@import "../property/property-list/property-list.component";
+@import "../property/property-detail/property-detail.component";
+@import "../broker/broker-list/broker-list.component";
+@import "../broker/broker-detail/broker-detail.component";
+
+// Global styles
+ion-page ion-content {
+  background-color: map-get($map: $background, $key: light);
+}
+
+ion-item.item,
+ion-content ion-card {
+  background-color: map-get($map: $background, $key: item);
+  color: map-get($map: $font, $key: light);
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+
+ion-content ion-card ion-card-content ion-card-title,
+ion-content ion-card ion-card-content p,
+ion-content ion-card h2 {
+  color: map-get($map: $font, $key: light);;
+}
+
+ion-item.item.activated {
+  background-color: map-get($map: $background, $key: light);
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+ion-item.item ion-label p {
+  color: map-get($map: $font, $key: detail);;
+}
+
+ion-content ion-list > .item:first-child,
+ion-content ion-list > .item:last-child, 
+ion-content ion-list .item .item-inner,
+ion-content ion-list > .item-wrapper:last-child .item {
+  border-top: 1px solid map-get($map: $background, $key: light);
+  border-bottom: 1px solid map-get($map: $background, $key: light);
+}

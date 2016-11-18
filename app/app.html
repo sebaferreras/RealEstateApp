@@ -1,0 +1,21 @@
+<ion-menu [content]="content" side="left" persistent="true" >
+  <ion-header>
+    <ion-toolbar dark>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+    <!-- Main navigation links-->
+    <ion-list no-lines>
+      <button ion-item detail-none *ngFor="let page of menuItems" (click)="openPage(page)">
+        <ion-icon ios="{{page.getOutlineIosIcon()}}" md="{{page.getAndroidIcon()}}" item-left></ion-icon>
+        {{page.getTitle()}}
+      </button>
+
+    </ion-list>
+
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>
